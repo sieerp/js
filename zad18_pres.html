@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+ <head> 
+ <title> Użycie fukcji </title> 
+ <meta charset="utf-8"> 
+ </head> 
+<body>
+ <div style="color:navy;font-size:50px;">
+ <script language="JavaScript">
+ var a=parseFloat(prompt("a=",""));
+ var b=parseFloat(prompt("b=",""));
+ function suma_pre(a, b) {
+ return a + b;
+ }
+ function odejmowanie_pre(a, b) {
+ return a - b;
+ }
+ function mnozenie_pre(a, b) {
+ return a * b;
+ }
+ function od_kwadratu_pre(a, b) {
+ return a * a, b * b;
+ }
+ function reszta_z_dzielenia_a_przez_b_pre(a, b) {
+ return a % b;
+ }
+ document.write("suma="+suma_pre(a,b)+"<br> odejmowanie="+odejmowanie_pre(a,b)+"<br> mnozenie="+mnozenie_pre(a,b)+"<br> od kwadratu :<br>"+a+" ^ 2 ="+od_kwadratu_pre(b,a)+"<br>"+b+" ^ 2 ="+od_kwadratu_pre(a,b)+"<br> reszta z dzielenia="+reszta_z_dzielenia_a_przez_b_pre(a,b)+"");
+</script>
+</div>
+</body>
+</html>

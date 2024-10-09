@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>zadanie 5</title>
+<script type="text/javascript"> 
+document.write("Wykonał: Adam Preś mój numer w dzienniku 18, czyli mam układ [(18) mod 4=2] układ 2".bold().fontcolor("red").fontsize("6")+"<br><br><br>")
+
+function WinOpen_grafika1() 
+    {
+   window.open("grafika1.html","grafika1","toolbar=no,directories=no,menubar=no,height=380,width=160,top=0,left=100");
+    }
+    function WinOpen_grafika2() 
+    {
+   window.open("grafika2.html","grafika2","toolbar=no,directories=no,menubar=no,height=380,width=160,top=1000,left=100");
+    }
+    function WinOpen_grafika3() 
+    {
+   window.open("grafika3.html","grafika3","toolbar=no,directories=no,menubar=no,height=380,width=160,top=0,left=1650");
+    }
+    function WinOpen_grafika4() 
+    {
+   window.open("grafika4.html","grafika4","toolbar=no,directories=no,menubar=no,height=380,width=160,top=1000,left=1650");
+    }
+    function okno_zamknij() 
+    {
+    window.close()
+    }
+</script>
+</head>
+<body>
+    <input type="button" name="grafika1" value="grafika1" onclick="WinOpen_grafika1(' ')">
+    <input type="button" name="grafika2" value="grafika2" onclick="WinOpen_grafika2(' ')">
+    <input type="button" name="grafika3" value="grafika3" onclick="WinOpen_grafika3(' ')">
+    <input type="button" name="grafika4" value="grafika4" onclick="WinOpen_grafika4(' ')">
+    <br><br><br><br><br>
+    <input type="button" value="zamknij okno" onclick="okno_zamknij()"/>
+</body>
+</html>
