@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+ <head> 
+ <title> Preś 2P </title> 
+ <meta charset="utf-8"> 
+ </head> 
+<body>
+    <h1>Kod HTML</h1>
+    <textarea rows="22" cols="64">
+
+        <!DOCTYPE html>
+        <html lang="pl">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Obliczenia trapezu równoramiennego</title>
+            <script>
+                function Pow_pres(a, b, h) {
+                    return ((Math.abs(a) + Math.abs(b)) / 2) * h;
+                }
+        
+                function Obw_pres(a, b, h) {
+                    const d = (Math.abs(a) - Math.abs(b)) / 2;
+                    const ramie = Math.sqrt(h * h + d * d);
+                    return Math.abs(a) + Math.abs(b) + 2 * ramie;
+                }
+        
+                function oblicz() {
+                    const a = parseFloat(document.getElementById("górna").value);
+                    const b = parseFloat(document.getElementById("dolna").value);
+                    const h = parseFloat(document.getElementById("wysokość").value);
+                    const pole = Pow_pres(a, b, h);
+                    const obwod = Obw_pres(a, b, h);
+                    document.write("<h2>Wyniki obliczeń:</h2>");
+                    document.write("<p>Pole trapezu: " + pole.toFixed(2) + " jednostek kwadratowych</p>");
+                    document.write("<p>Obwód trapezu: " + obwod.toFixed(2) + " jednostek</p>");
+                }
+            </script>
+        </head>
+        <body>
+            <h1>Obliczenia trapezu równoramiennego</h1>
+            <form onsubmit="event.preventDefault(); oblicz();">
+                <label for="górna">Górna podstawa (a):</label>
+                <input type="number" id="górna" required><br><br>
+                
+                <label for="dolna">Dolna podstawa (b):</label>
+                <input type="number" id="dolna" required><br><br>
+                
+                <label for="wysokość">Wysokość (h):</label>
+                <input type="number" id="wysokość" required><br><br>
+                
+                <button type="submit">Oblicz pole i obwód</button>
+            </form>
+        </body>
+        </html>
+
+    </textarea>
+</body>

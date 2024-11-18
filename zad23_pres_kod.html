@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+ <head> 
+ <title> Preś 2P </title> 
+ <meta charset="utf-8"> 
+ </head> 
+<body>
+    <h1>Kod HTML</h1>
+    <textarea rows="22" cols="64">
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Preś 2P</title>
+            <script>
+                function Oblicz_pres()
+                {
+        
+                    let a = document.getElementById("a_dane_pres").value;
+                    let b = document.getElementById("b_dane_pres").value;
+                    if (isNaN(a) || isNaN(b)) {
+                        alert('Proszę podać prawidłowe wartości dla D i X.');
+                        return;
+                    }
+                    const angleRadians = Math.atan(a / b);
+                    const ladderAngle = (angleRadians * (180 / Math.PI)).toFixed(2);
+                    const cos = document.getElementById("1").innerText = `drabina : ${Math.sqrt(Math.pow(a,2)+Math.pow(b,2)).toFixed(2)}`;
+                    const cos2 = document.getElementById("2").innerText = `alfa: ${ladderAngle}`;
+                }
+            </script>
+        </head>
+        <body>
+            <P>podaj odleglosc od drabiny do kata</P>
+            <input type="text" id ="a_dane_pres">
+            <input type="text" id ="b_dane_pres">
+            <button onclick="Oblicz_pres()">oblicz</button>
+            <br>
+            <span id="1"></span>
+            <br>
+            <span id="2">  </span>
+        </body>
+        </html>
+
+    </textarea>
+</body>

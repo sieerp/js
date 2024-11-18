@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+ <head> 
+ <title> Preś 2P </title> 
+ <meta charset="utf-8"> 
+ </head> 
+<body>
+    <h1>Kod HTML</h1>
+    <textarea rows="22" cols="64">
+
+        <!DOCTYPE html>
+        <html lang="pl">
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Preś 2P</title>
+            <script>
+              function zadanie24() {
+                let x1 = parseFloat(prompt("Podaj x1 (w stopniach):"));
+                let x2 = parseFloat(prompt("Podaj x2:"));
+                document.getElementById(
+                  "output"
+                ).innerHTML = `wczytane liczby:<br>x1=${x1}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x2=${x2}`;
+                const y1 = Math.pow(x1, x2).toFixed(2);
+                const y2 = Math.sqrt(x1).toFixed(2);
+                const y3 = Math.sqrt(x2).toFixed(2);
+                document.getElementById(
+                  "calculations"
+                ).innerHTML = `y1 (x1^x2): ${y1}<br>y2 (sqrt(x1)): ${y2}<br>y3 (sqrt(x2)): ${y3}`;
+                const x1Rad = ((x1 * Math.PI) / 180).toFixed(2);
+                document.getElementById(
+                  "angles"
+                ).innerHTML = `x1 = ${x1} [stopniach]<br>x1 = ${x1Rad} [radianach]`;
+              }
+            </script>
+          </head>
+          <body>
+            <h2>Preś-zad24</h2>
+            <button onclick="zadanie24()">Uruchom Zadanie 24</button>
+            <div id="output"></div>
+            <div id="calculations"></div>
+            <div id="angles"></div>
+          </body>
+        </html>
+
+    </textarea>
+</body>

@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+ <head> 
+ <title> Preś 2P </title> 
+ <meta charset="utf-8"> 
+ </head> 
+<body>
+    <h1>Kod HTML</h1>
+    <textarea rows="22" cols="64">
+
+        <!DOCTYPE html>
+        <html lang="pl">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Obliczenia lotu samolotu</title>
+            <script>
+                function obliczWysokosc(odleglosc, droga) {
+                    return Math.sqrt(Math.pow(droga, 2) - Math.pow(odleglosc, 2));
+                }
+        
+                function obliczKat(odleglosc, wysokosc) {
+                    return Math.atan(wysokosc / odleglosc) * (180 / Math.PI);
+                }
+        
+                function oblicz() {
+                    const odl_pre = parseFloat(document.getElementById("odleglosc").value);
+                    const s_pre = parseFloat(document.getElementById("droga").value);
+        
+                    const h_pre = obliczWysokosc(odl_pre, s_pre);
+                    const kat_pre = obliczKat(odl_pre, h_pre);
+        
+                    document.write("<h2>Wyniki obliczeń:</h2>");
+                    document.write("<p>Wysokość samolotu: " + h_kow.toFixed(2) + " jednostek</p>");
+                    document.write("<p>Kąt startu samolotu: " + kat_kow.toFixed(2) + " stopni</p>");
+                }
+            </script>
+        </head>
+        <body>
+            <h1>Obliczenia lotu samolotu</h1>
+            <form onsubmit="event.preventDefault(); oblicz();">
+                <label for="odleglosc">Odległość (odl_pre):</label>
+                <input type="number" id="odleglosc" required><br><br>
+                
+                <label for="droga">Droga (s_pre):</label>
+                <input type="number" id="droga" required><br><br>
+                
+                <button type="submit">Oblicz wysokość i kąt startu</button>
+            </form>
+        </body>
+        </html>
+    </textarea>
+</body>

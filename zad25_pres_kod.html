@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+ <head> 
+ <title> Preś 2P </title> 
+ <meta charset="utf-8"> 
+ </head> 
+<body>
+    <h1>Kod HTML</h1>
+    <textarea rows="22" cols="64">
+
+        <!DOCTYPE html>
+        <html lang="pl">
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Preś 2P</title>
+            <style>
+              .result {
+                color: blue;
+                font-size: 18px;
+              }
+            </style>
+            <script>
+              function zadanie25() {
+                let No = parseFloat(prompt("Podaj ilość początkową atomów (No):"));
+                let t = parseFloat(prompt("Podaj czas (t w latach):"));
+                let T12 = parseFloat(prompt("Podaj czas połowicznego rozpadu (T1/2):"));
+                const lambda = (Math.LN2 / T12).toFixed(7);
+                const N = (No * Math.pow(Math.E, -lambda * t)).toFixed(2);
+                document.getElementById(
+                  "output25"
+                ).innerHTML = `No: ${No} sztuk<br>t: ${t} lat<br>T1/2: ${T12} lat<br>λ: ${lambda} 1/rok<br>N: ${N} sztuk`;
+              }
+            </script>
+          </head>
+          <body>
+            <h2>Preś-Zadanie25</h2>
+            <button onclick="zadanie25()">Uruchom Zadanie 25</button>
+            <div id="output25" class="result"></div>
+          </body>
+        </html>
+
+    </textarea>
+</body>
