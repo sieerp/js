@@ -1,49 +1,34 @@
-<html> 
-<head> 
-<title>
- Przykład obliczenia V i Pc walca
-</title>
- <script language="JavaScript">
-function V(r,h)
-{
- r_liczba=parseFloat(r)
- h_liczba=parseFloat(h)
- V_wynik=Math.PI*r_liczba*r_liczba*h_liczba
- document.getElementsByName('obj')[0].value=V_wynik.toFixed(2); /* na dokument */
- alert("V="+V_wynik.toFixed(2)+" cm^3"); /*do okna Alert */
- pokaz1.innerHTML="V="+V_wynik.toFixed(2)+" cm^3"+"<br>"; /* do tabeli */
-}
- function Pc(r,h)
-{
- r_liczba=parseFloat(r)
- h_liczba=parseFloat(h)
- Pc_wynik=2*Math.PI*r_liczba*r_liczba+2*Math.PI*r_liczba*h_liczba
- document.getElementsByName('pole')[0].value=Pc_wynik.toFixed(2);
- alert("Pc="+Pc_wynik.toFixed(2)+" cm^2");
- pokaz2.innerHTML="Pc="+Pc_wynik.toFixed(2)+"cm^2";
-}
- </script>
-</head> 
-<body> 
-Pobliczanie V i Pc walca
-<br> <br>
-<form name="formularz" action="..." onsubmit="V(this.promien.value,this.wysokosc.value); 
-Pc(this.promien.value,this.wysokosc.value);return false"> 
- Podaj r=
- <input size="6" name="promien">
- Podaj h=
- <input size="6" name="wysokosc">
- <br> <br>
- <input TYPE="submit" Value="oblicz" >
- <br> <br>
- V=
- <input size="6" name="obj">
- Pc=
- <input size="6" name="pole">
-</form>
-<table>
- <tr id="pokaz1"></tr>
- <tr id="pokaz2"></tr>
-</table>
-</body> 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preś 2P</title>
+  </head>
+  <body>
+    <input type="number" id="a_dane_pres" />
+    <input type="number" id="b_dane_pres" />
+    <button onclick="Pole_pres()">oblicz obwod</button>
+    <button onclick="obowd_pres()">oblicz obwod</button>
+    <br />
+    <span id="1"></span>
+    <br />
+    <span id="2"> </span>
+    <script>
+      function Pole_pres() {
+        let a = document.getElementById("a_dane_pres").value;
+        let b = document.getElementById("b_dane_pres").value;
+        const cos = (document.getElementById("1").innerText = `pole : ${
+          a * b
+        }`);
+      }
+      function obowd_pres() {
+        let a = parseFloat(document.getElementById("a_dane_pres").value);
+        let b = parseFloat(document.getElementById("b_dane_pres").value);
+        const cos = (document.getElementById("2").innerText = `obwod: ${
+          a * 2 + 2 * b
+        }`);
+      }
+    </script>
+  </body>
 </html>
