@@ -7,7 +7,67 @@
     <h1>Kod HTML</h1>
     <textarea rows="22" cols="64">
 
-<!--  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preś 2P</title>
+    <style>
+      div {
+        color: green;
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nazwa">
+      <input type="text" id="obwod" placeholder="podaj xa" /><br />
+      <input type="text" id="obwod1" placeholder="podaj xb" /><br />
+      <input type="text" id="obwod2" placeholder="podaj xc" /><br />
+      <input type="text" id="obwod3" placeholder="podaj ya" /><br />
+      <input type="text" id="obwod4" placeholder="podaj yb" /><br />
+      <input type="text" id="obwod5" placeholder="podaj yc" /><br />
+      <button onclick="wykonano()">oblicz</button>
+      <div id="wyniki"></div>
+      <script>
+        function wykonano() {
+          let xa1 = parseFloat(document.getElementById("obwod").value);
+          let ya1 = parseFloat(document.getElementById("obwod1").value);
+          let xb1 = parseFloat(document.getElementById("obwod2").value);
+          let yb1 = parseFloat(document.getElementById("obwod3").value);
+          let xc1 = parseFloat(document.getElementById("obwod4").value);
+          let yc1 = parseFloat(document.getElementById("obwod5").value);
+
+          let ab = ab_pre(xa1, ya1, xb1, yb1);
+          let bc = bc_pre(xb1, yb1, xc1, yc1);
+          let ac = ac_pre(xa1, ya1, xc1, yc1);
+
+          document.getElementById("wyniki").innerHTML =
+            "długość boku ab= " +
+            ab.toFixed(2) +
+            " cm<br>" +
+            "długość boku bc= " +
+            bc.toFixed(2) +
+            " cm<br>" +
+            "długość boku ac= " +
+            ac.toFixed(2) +
+            " cm";
+
+          function ab_pre(xa, ya, xb, yb) {
+            return Math.sqrt(Math.pow(xb1 - xa1, 2) + Math.pow(yb1 - ya1, 2));
+          }
+          function bc_pre(xb, yb, xc, yc) {
+            return Math.sqrt(Math.pow(xc1 - xb1, 2) + Math.pow(yc1 - yb1, 2));
+          }
+          function ac_pre(xa, ya, xc, yc) {
+            return Math.sqrt(Math.pow(xa1 - xc1, 2) + Math.pow(ya1 - yc1, 2));
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>
 
     </textarea>
 </body>
